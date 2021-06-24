@@ -33,7 +33,6 @@
                 android:id="@+id/etUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="8dp"
                 android:backgroundTint="@color/white"
                 android:hint="User Name" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +58,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
-                android:paddingVertical="8dp"
                 android:hint="Password" />
         </com.google.android.material.textfield.TextInputLayout>
 
