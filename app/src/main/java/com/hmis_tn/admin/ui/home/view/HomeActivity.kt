@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var homeViewModel: HomeViewModel
 
     private val list = ArrayList<OpListRespItem>()
-    val a = ArrayList<ArrayList<Institution>>()
+    val displayList = ArrayList<ArrayList<Institution>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
         rvInstitutions?.layoutManager = LinearLayoutManager(this)
-        val adapter = InstitutionAdapter(list)
+        val adapter = InstitutionAdapter(displayList)
         rvInstitutions?.adapter = adapter
     }
 
@@ -86,12 +86,17 @@ class HomeActivity : AppCompatActivity() {
                     ProgressUtil.dismissProgressDialog()
                     response.body()?.let {
                         val temp = ArrayList<Institution>()
-                        var firstFacilityCategoryName =
+                        var name =
                             if (it.isNotEmpty())
                                 it[0].facility_category_name
                             else
                                 ""
                         it.forEach { opListRespItem ->
+                            if(opListRespItem.facility_category_name != name) {
+                                displayList.add(temp)
+                                temp.clear()
+                                name = opListRespItem.facility_category_name
+                            }
                             temp.add(
                                 Institution(
                                     encounter_type_name = opListRespItem.encounter_type_name,
@@ -103,6 +108,8 @@ class HomeActivity : AppCompatActivity() {
                                 )
                             )
                         }
+                        displayList.add(temp)
+
                     }
                 }
 
