@@ -1,6 +1,8 @@
-package com.hmis_tn.admin.home.view
+package com.hmis_tn.admin.ui.home.view
 
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hmis_tn.admin.R
@@ -25,6 +27,18 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun listeners() {
+        tvOp.setOnClickListener {
+            selectButton(tvOp)
+        }
 
+        tvIp.setOnClickListener {
+
+        }
+    }
+
+    private fun selectButton(tv: TextView) {
+        tvOp.setBackgroundColor(Color.WHITE)
+        tvOp.setTextColor(Color.BLACK)
+        tvIp.setBackgroundColor(Color.WHITE)
     }
 }
