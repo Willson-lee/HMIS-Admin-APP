@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import com.hmis_tn.admin.network.ApiService
 import com.hmis_tn.admin.network.NetworkClient
-import com.hmis_tn.admin.ui.home.model.OpListResp
+import com.hmis_tn.admin.ui.home.model.response.OpListResp
 import com.hmis_tn.admin.utils.ProgressUtil
+import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 
 class HomeViewModel : ViewModel() {
 

@@ -1,6 +1,6 @@
 package com.hmis_tn.admin.network
 
-import com.hmis_tn.admin.ui.home.model.OpListResp
+import com.hmis_tn.admin.ui.home.model.response.OpListResp
 import retrofit2.Call
 import retrofit2.http.GET
 

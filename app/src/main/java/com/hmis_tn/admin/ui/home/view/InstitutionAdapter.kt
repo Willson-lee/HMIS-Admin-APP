@@ -3,10 +3,9 @@ package com.hmis_tn.admin.ui.home.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hmis_tn.admin.R
-import com.hmis_tn.admin.ui.home.model.OpListRespItem
+import com.hmis_tn.admin.ui.home.model.response.OpListRespItem
 import kotlinx.android.synthetic.main.item_institutions.view.*
 
 class InstitutionAdapter(
